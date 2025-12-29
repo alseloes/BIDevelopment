@@ -7,6 +7,7 @@
 * [La interfaz de usuario de Power Query](https://learn.microsoft.com/es-es/power-query/power-query-ui#the-query-ribbon)
 * [Guía sobre la fecha y hora automáticas en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/guidance/auto-date-time)
 * [Tipos de datos en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/connect-data/desktop-data-types)
+* [Dar forma y combinar datos en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/connect-data/desktop-shape-and-combine-data)
 * [Power BI Premium Per User](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-premium-per-user-faq)
 * [Power BI licensing guide for organizations](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-power-bi-licensing)
 * [Power BI Service](https://app.powerbi.com/home?experience=power-bi)
@@ -75,3 +76,32 @@
     * Cambiar el tipo de datos de las columnas: este procedimiento se realiza en el editor de Power Query, puede hacerse mediante la cinta de opciones/Transform o mediante "click derecho" sobre símbolo izquierdo en encabezado de columna. Estos pasos quedarán guardados como paso programado en la **Configuración de la consulta** como "Tipo cambiado".
 4) Combinación de varias tablas en una sola [Rev](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/5-combine-tables):
 
+    La capacidad de combinar consultas es muy eficaz, ya que permite anexar o combinar diferentes tablas o consultas. Podrá combinar varias tablas en una sola en las siguientes circunstancias:
+
+    * Existen demasiadas tablas, lo que dificulta navegar por un modelo semántico demasiado complicado.
+    * Hay varias tablas con un rol parecido.
+    * Hay una tabla que solo tiene una o dos columnas y estas se podrían incluir en otras tablas.
+    * Le gustaría usar varias columnas de tablas diferentes en una columna personalizada.
+
+    Las tablas se pueden combinar de dos maneras distintas: la combinación y la anexión:
+
+    * Anexar consultas:
+        * Se debe tener una columna que sirva de Key entre las consultas.
+        * Las columnas que se necesiten en la tabla combinada deben tener el mismo nombre en las tablas de datos originales, a fin de ver una vista agrupada.
+        * Elimine las columnas sobrantes de las consultas.
+
+        El proceso se hace por inicio/Anexar consultas (como nuevas o en una tabla existente).
+    * Combinación de consultas: consiste en combinar los datos de varias tablas en una sola, basándose en una columna que sea común entre las tablas (similar a `JOIN` en SQL).
+
+5) Generación de perfiles de datos [Rev](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/6-profile-data):
+
+    Consiste en analizar los matices de los datos: la determinación de anomalías, el examen y el desarrollo de las estructuras de datos subyacentes y la consulta de estadísticas de datos, como recuentos de filas, distribuciones de valores, valores mínimos y máximos, promedios, etc. Este concepto es importante porque permite dar forma a los datos y organizarlos para que la interacción con los datos y la identificación de su distribución no sea complicada, lo que facilita el trabajo con los datos en el frontend para el desarrollo de elementos de informes.
+
+    * Examen de las estructuras de datos: Modelo
+    * Búsqueda de anomalías y estadísticas de datos: Vista/Distribución de columnas, Calidad de columnas y Perfil de columnas
+
+6) Uso del Editor avanzado para modificar el código M:
+
+    Cada vez que da forma a los datos en Power Query, está creando un paso en el proceso de Power Query, los cuales se pueden reordenar, eliminar y modificar donde tenga sentido
+
+**Recurso adicional:** [Laboratorio - Cargar datos en Power BI Desktop](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/8-lab)
