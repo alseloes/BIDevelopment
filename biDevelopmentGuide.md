@@ -5,6 +5,7 @@
 * [Documentación de introducción a Power BI](https://learn.microsoft.com/es-es/power-bi/fundamentals/)
 * [Documentación de Power BI](https://learn.microsoft.com/es-es/power-bi/)
 * [La interfaz de usuario de Power Query](https://learn.microsoft.com/es-es/power-query/power-query-ui#the-query-ribbon)
+* [Guía sobre la fecha y hora automáticas en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/guidance/auto-date-time)
 * [Tipos de datos en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/connect-data/desktop-data-types)
 * [Power BI Premium Per User](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-premium-per-user-faq)
 * [Power BI licensing guide for organizations](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-power-bi-licensing)
@@ -48,4 +49,29 @@
 
 * Ejemplos y explicación de Power BI Service [acá](https://learn.microsoft.com/es-es/training/modules/get-started-with-power-bi/4-exercise-touring-and-using-power-bi)
 
+### POWER QUERY
+
+* El editor de Power Query en Power BI Desktop permite dar forma (transformar) a los datos importados.
+* En el panel de PQ, en el lado izquierdo aparece el panel de **Consultas**
+* En el lado derecho los pasos **Configuración de la consulta**
+
 ## PASOS PARA CREAR UN DASHBOARD
+
+1) Identificar encabezados y nombres de columnas. Podría ser necesario ([Rev](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/2-shape-data)):
+    * Promocionar encabezados.
+    * Cambiar el nombre de las columnas.
+    * Quitar filas superiores.
+    * Anular dinamización de columnas.
+    * Dinamizar columnas.
+2) Simplificación de la estructura de datos ([Rev](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/3-data-structure)):
+    * Cambiar el nombre de las consultas.
+    * Reemplazar valores.
+    * Reemplazar los valores `null`: algunas veces es necesario reemlazar los valores `null` por  cero para evitar errores en operaciones.
+    * Quitar los duplicados: es posible que sea necesario eliminar duplicados para crear una tabla con "categorías" únicas para usarlas en el modelo semántico. En este caso, se recomienda copiar la tabla antes de quitar los duplicados. La opción Copiar se encuentra en la parte superior del menú contextual. Copiar la tabla antes de quitar los duplicados proporcionará una comparación de las tablas y permitirá usar ambas si es necesario.
+    * Procedimientos recomendados para asignar nombres a tablas, columnas y valores: es recomendable usar el lenguaje y las abreviaturas que se usen habitualmente en la organización, algo con lo que todos los usuarios estén de acuerdo y vean como terminología común. Al reemplazar valores, intente imaginar cómo aparecerán esos valores en el informe. Los valores demasiado largos podrían ser difíciles de leer y no caber en un objeto visual. Los valores demasiado cortos podrían ser difíciles de interpretar. Evitar los acrónimos en los valores, siempre que el texto quepa en el objeto visual.
+3) Evaluación y cambio de tipos de datos de columna ([Rev](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/4-column-data-types)):
+
+    **Implicaciones relacionadas con la determinación incorrecta del tipo de datos**: Los tipos de datos incorrectos impedirán la creación de determinados cálculos, la derivación de jerarquías o la creación de relaciones adecuadas con otras tablas. En un campo de fecha es la incapacidad de crear una jerarquía de fechas, que permite analizar los datos de manera anual, mensual o semanal.
+    * Cambiar el tipo de datos de las columnas: este procedimiento se realiza en el editor de Power Query, puede hacerse mediante la cinta de opciones/Transform o mediante "click derecho" sobre símbolo izquierdo en encabezado de columna. Estos pasos quedarán guardados como paso programado en la **Configuración de la consulta** como "Tipo cambiado".
+4) Combinación de varias tablas en una sola [Rev](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/5-combine-tables):
+
