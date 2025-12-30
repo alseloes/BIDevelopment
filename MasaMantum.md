@@ -32,6 +32,7 @@ Cuando se cierra la OT en mantum se deja registro en el excel haciendo un cambio
     * idinstalacionesproceso
     * idvariableequipo: descripción de equipos
     * id_paroequipo: se puede sacar el tiempo medio entre fallas, tiempo de duración de paro
+    * Revisar que es _idam_ en informevariablesresultadoam
 
 **IMPORTANTE:**
 
@@ -39,3 +40,10 @@ Cuando se cierra la OT en mantum se deja registro en el excel haciendo un cambio
 * Revisar con Mantenimiento que se comience a alimentar el horómetro.
 Montar un indicador que se vaya actualizando a medida que se vaya limpiando.
 * Se necesita el indicador de que es latonería y pintura, que es reparación electrica, etc, es decir, separar lo preventivo de lo correctivo.
+* Consultar si hay más KPIS de mantenimiento (Gustavo).
+
+## ABASTECIMIENTO
+
+## OPERACIONES
+
+## GESTIÓN HUMANA
