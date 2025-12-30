@@ -58,6 +58,8 @@
 
 ## PASOS PARA CREAR UN DASHBOARD
 
+### Limpiar, transformar y cargar datos en Power BI
+
 1) Identificar encabezados y nombres de columnas. Podría ser necesario ([Rev](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/2-shape-data)):
     * Promocionar encabezados.
     * Cambiar el nombre de las columnas.
