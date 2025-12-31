@@ -44,6 +44,18 @@ Montar un indicador que se vaya actualizando a medida que se vaya limpiando.
 
 ## ABASTECIMIENTO
 
+### Inquietudes
+
+1) Datos generales de órdenes de compra/Almacén: Qué hacer con las que están en almacén 01?
+2) Columnas Estado, Estado SOC, Estado aprobación... cual es la lógica de la nomemclatura
+3) Código SOC --> SLC-XXX? Todas tienen SLC
+4) Qué tan objetivo se alimenta la fecha de espera?
+5) cual es el criterio de aceptación para saber si una entrega está retrasada? cual es la tolerancia?
+6) Qué tanto se alimenta la fecha de entrega? por qué no siempre se alimenta?
+7) Cuales son los KPIs qué se están manejando?
+8) Id bodega a veces llega null... qué hacer en esos casos?
+9) Estado almacén: Qué es un almacén inactivo?
+
 ## OPERACIONES
 
 ## GESTIÓN HUMANA
