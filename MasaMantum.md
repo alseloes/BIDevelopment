@@ -34,6 +34,10 @@ Cuando se cierra la OT en mantum se deja registro en el excel haciendo un cambio
     * id_paroequipo: se puede sacar el tiempo medio entre fallas, tiempo de duración de paro
     * Revisar que es _idam_ en informevariablesresultadoam
 
+### Director de equipos
+
+3 KPIs: Disponibilidad, confiabilidad, tiempo medio entre fallas.
+
 **IMPORTANTE:**
 
 * Revisar con mantenimiento que las OT que deberían estar cerradas hasta el momento realmente se cierren. Ej: AH05, aparece con 3 OT abiertas.
@@ -47,7 +51,7 @@ Montar un indicador que se vaya actualizando a medida que se vaya limpiando.
 ### Inquietudes
 
 1) Datos generales de órdenes de compra/Almacén: Qué hacer con las que están en almacén 01?
-2) Columnas Estado, Estado SOC, Estado aprobación... cual es la lógica de la nomemclatura
+2) Columnas Estado, Estado SOC, Estado aprobación... cual es la lógica de la nomemclatura?
 3) Código SOC --> SLC-XXX? Todas tienen SLC
 4) Qué tan objetivo se alimenta la fecha de espera?
 5) cual es el criterio de aceptación para saber si una entrega está retrasada? cual es la tolerancia?
@@ -58,4 +62,18 @@ Montar un indicador que se vaya actualizando a medida que se vaya limpiando.
 
 ## OPERACIONES
 
+Pendiente por resumen de reunión
+
 ## GESTIÓN HUMANA
+
+* Simplificar los nombres de las columnas
+* Organizar el tipo de dato
+* Eliminar las columnas que no se necesiten
+* Hacer que las columnas de todas las tablas coincidan
+
+KPIs:
+
+* Desempeño: simplificar nombres, organizar tipo de dato, Eliminar columnas, hacer q columnas coincidan
+* Costo de nómina: Alimentar diciembre en una sola hoja sin cálculos, hacer los cálculos en power BI
+* Selección
+* Desvinculación
