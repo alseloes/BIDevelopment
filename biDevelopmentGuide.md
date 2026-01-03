@@ -11,6 +11,9 @@
 * [Power BI Premium Per User](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-premium-per-user-faq)
 * [Power BI licensing guide for organizations](https://learn.microsoft.com/en-us/fabric/enterprise/powerbi/service-admin-power-bi-licensing)
 * [Power BI Service](https://app.powerbi.com/home?experience=power-bi)
+* [Aplicación de fecha y hora automáticas en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/transform-model/desktop-auto-date-time)
+* [Especificación de categorías de datos en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/transform-model/desktop-data-categorization)
+* [Descripción de un esquema de estrella e importancia para Power BI](https://learn.microsoft.com/es-es/power-bi/guidance/star-schema)
 
 ## OTRO MATERIAL SOBRE POWER BI
 
@@ -30,9 +33,15 @@
 
 * Todos los cursos, rutas de aprendizaje y módulos [Power BI](https://learn.microsoft.com/es-es/training/browse/?products=power-bi)
 * [Introducción a la compilación con Power BI](https://learn.microsoft.com/es-es/training/modules/get-started-with-power-bi/)
+
+## RUTAS DE MICROSOFT LEARN
+
 * RUTA (por completar): [Introducción al análisis de datos de Microsoft](https://learn.microsoft.com/es-es/training/paths/data-analytics-microsoft/)
-* RUTA (por completar): [Preparar y visualizar datos con Microsoft Power BI](https://learn.microsoft.com/es-es/training/paths/prepare-visualize-data-power-bi/)
-* RUTA (por completar): [Preparación de datos para el análisis con Power BI](https://learn.microsoft.com/es-es/training/paths/prepare-data-power-bi/)
+* RUTA (Ver Diseñar informes de Power BI): [Preparar y visualizar datos con Microsoft Power BI](https://learn.microsoft.com/es-es/training/paths/prepare-visualize-data-power-bi/)
+* RUTA (Ver Elegir un marco de modelo de Power BI): [Preparación de datos para el análisis con Power BI](https://learn.microsoft.com/es-es/training/paths/prepare-data-power-bi/)
+* Ruta (Por completar): [Diseño de informes eficaces en Power BI](https://learn.microsoft.com/es-es/training/paths/power-bi-effective/)
+* [Crear informes interactivos con Copilot para Power BI](https://learn.microsoft.com/es-es/training/modules/power-bi-copilot/)
+* [Introducción a Copilot para Power BI](https://learn.microsoft.com/es-es/power-bi/create-reports/copilot-introduction)
 
 ## NOTAS
 
@@ -107,3 +116,77 @@
     Cada vez que da forma a los datos en Power Query, está creando un paso en el proceso de Power Query, los cuales se pueden reordenar, eliminar y modificar donde tenga sentido
 
 **Recurso adicional:** [Laboratorio - Cargar datos en Power BI Desktop](https://learn.microsoft.com/es-es/training/modules/clean-data-power-bi/8-lab)
+
+### Configurar un modelo semántico
+
+1) Configurar relaciones ([Rev](https://learn.microsoft.com/es-es/training/modules/configure-semantic-model-power-bi/2-relationships)):
+
+    * Configurar opciones de carga de datos
+    * Columnas:
+
+        ```txt
+        "desde" ---> "hasta"
+        ```
+
+        * Columnas con mismo tipo de datos
+        * Valores coincidentes
+        * "Lado uno" debe contener datos únicos.
+        * Si origen de datos tiene clave de varias columnas, transformar los datos para producir claves de una sola columna
+    * Cardinalidad:
+        * Uno a varios (1:*): Lado uno(tabla de dimensiones) - Lado varios (tabla de hechos)
+        * Varios a uno (*:1):  Uno a varios y varios a uno es lo mismo pero en distinta dirección.
+        * Uno a uno (1:1): Permite relacionar dos tablas con una sola columna, no es común.
+        * Varios a varios (*:*): Permite configurar relaciones complejas entre tablas de modelos. Es útil cuando no hay una columna de valores únicos.
+    * Dirección del filtro cruzado: Una relación de modelo se define con una dirección de filtro cruzado. La dirección determina cómo se propagan los filtros. Cuando hay un "lado uno", los filtros siempre se propagan al otro lado. Cuando hay un "lado varios", también es posible permitir la propagación al otro lado.
+
+        Las posibles opciones de filtro cruzado dependen del tipo de cardinalidad de la relación.
+
+        * Uno a varios (o varios a uno): único o ambos
+        * Uno a uno: varios
+        * Varios a varios: único a cada tabla o ambos
+
+        Es recomendable evitar o minimizar los filtros cruzados en ambas direcciones para mejorar el rendimiento de las consultas y crear una experiencia intuitiva.
+
+    * Comparación entre relaciones activas e inactivas: Solo puede haber una ruta de propagación de filtros activa entre dos tablas de modelos, pero es posible introducir otras rutas de relación, aunque se deben establecer estas relaciones como *inactivas*, las que solo se pueden activar durante la evaluación de un cálculo de modelo mediante la función DAX `USERELATIONSHIP`.
+
+    * Trabajar con el diagrama del modelo:
+        * La cardinalidad de una relación se describe mediante los iconos "uno" (1) o "varios" (*), situados al final de la línea de relación.
+        * La dirección del filtro cruzado de una relación se describe mediante las flechas situadas en el centro de la línea de relación.
+        * La línea continua es una relación activa y la línea de puntos es la inactiva.
+
+2) Configurar tablas ([Rev](https://learn.microsoft.com/es-es/training/modules/configure-semantic-model-power-bi/3-tables)):
+    * Configurar las propiedades de tabla.
+    * Marcar tablas de fechas.
+3) Configurar columnas ([Rev](https://learn.microsoft.com/es-es/training/modules/configure-semantic-model-power-bi/4-columns)):
+    * Configurar el formato de las columnas: tipo de dato y como se presentan
+    * Establecer el orden de clasificación.
+    * Categorizar datos.
+    * Configurar jerarquías: espacial y URL
+    * Configurar resumen: Suma, Mín., Máx., Promedio, Recuento y Recuento de descuento (o Ninguno).
+4) Configurar jerarquías ([Rev](https://learn.microsoft.com/es-es/training/modules/configure-semantic-model-power-bi/5-hierarchies))
+    * Son opcionales y se usan para proporcionar pistas de las relaciones entre las columnas de una tabla.
+5) Configurar medidas ([Rev](https://learn.microsoft.com/es-es/training/modules/configure-semantic-model-power-bi/6-measures))
+
+    Una medida es una fórmula DAX con nombre que se añade a una tabla de modelo. Permite resumir y aparece en el panel Datos con un icono de calculadora. Los nombres de las medidas deben ser exclusivos dentro del modelo. Las medidas pueden ser simples, como `SUM` o `AVERAGE`. Las medidas también pueden ser complejas y calcular el Sales Amount menos Product Cost para sacar el Profit.
+
+    * Uso de medidas rápidas.
+
+6) Configurar parámetros ([Rev](https://learn.microsoft.com/es-es/training/modules/configure-semantic-model-power-bi/7-parameters)): Un parámetro permite a los usuarios cambiar ajustes en el informe, tales como filtros o cálculos, sin cambiar los datos originales. Pueden ser de tipo *rango numérico* y de *campos*.
+
+    * Crear un parámetro de rango numérico: se debe establecer un tipo de datos numérico, valores mínimos y máximos, un valor de incremento y un valor predetermionado. Power BI crea una tabla calculada mediante DAX. La tabla no tiene relación con ningún otra ni la necesita por lo que es una tabla desconectada. Los parámetros aparecen en el panel de Datos con un signo de interrogación.
+    * Crear un parámetro de campos<:>
+
+### Diseñar informes de Power BI
+
+1) Introcucción ([Rev](https://learn.microsoft.com/es-es/training/modules/power-bi-effective-reports/1-introduction))
+
+    * Estructura de unforme:
+        * Objetos visuales: visualizaciones de los datos del modelo semántico.
+        * Elementos: proporcionan interés visual, pero no usan datos del modelo semántico. Algunos de estos elementos son cuadros de texto, botones, formas e imágenes.
+
+        A menudo, un informe bien diseñado proporciona un resumen general en la primera página y detalles complementarios en las siguientes.
+
+    * Crear el diseño del informe analítico: Cuando los consumidores de informes miran un informe, se produce un proceso automático e inconsciente al comprender lo que ven. Por lo tanto, debe cumplir con los principios básicos de diseño de informes para respaldar este proceso con el fin de comunicar de forma eficaz el significado de los datos. Los buenos diseños de informes deben tener en cuenta los principios de diseño de colocación, equilibrio, contraste, proximidad y repetición: menos es más.
+
+        * Ubicación: Por lo general la información más iportante debe ir en la esquina superior izquierda, los elementos de izquierda a derecha y de arriba a abajo.
+
