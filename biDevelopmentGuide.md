@@ -14,6 +14,10 @@
 * [Aplicación de fecha y hora automáticas en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/transform-model/desktop-auto-date-time)
 * [Especificación de categorías de datos en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/transform-model/desktop-data-categorization)
 * [Descripción de un esquema de estrella e importancia para Power BI](https://learn.microsoft.com/es-es/power-bi/guidance/star-schema)
+* [Uso de los temas para los informes en Power BI Desktop](https://learn.microsoft.com/es-es/power-bi/create-reports/desktop-report-themes)
+* [Tipos de visualización en Power BI](https://learn.microsoft.com/es-es/power-bi/visuals/power-bi-visualization-types-for-reports-and-q-and-a)
+* [Obtención de detalles en informes de Power BI: vaya a información detallada](https://learn.microsoft.com/es-es/power-bi/create-reports/desktop-drillthrough)
+* [Creación de información sobre herramientas basada en páginas de informes](https://learn.microsoft.com/es-es/power-bi/create-reports/desktop-tooltips)
 
 ## OTRO MATERIAL SOBRE POWER BI
 
@@ -188,5 +192,87 @@
 
     * Crear el diseño del informe analítico: Cuando los consumidores de informes miran un informe, se produce un proceso automático e inconsciente al comprender lo que ven. Por lo tanto, debe cumplir con los principios básicos de diseño de informes para respaldar este proceso con el fin de comunicar de forma eficaz el significado de los datos. Los buenos diseños de informes deben tener en cuenta los principios de diseño de colocación, equilibrio, contraste, proximidad y repetición: menos es más.
 
-        * Ubicación: Por lo general la información más iportante debe ir en la esquina superior izquierda, los elementos de izquierda a derecha y de arriba a abajo.
+        * Ubicación: Por lo general la información más importante debe ir en la esquina superior izquierda, los elementos de izquierda a derecha y de arriba a abajo. Organizarlos por grupos lógicos, con elementos alineados de objetos de informes, aplicar la regla de los tercios, la cual propone dividir la cuadrícula en nueve partes iguales.
+        * Equilibrio: Hace referencia a la estabilidad y la estructura en el diseño. El equilibrio (simétrico o asimétrico) en un diseño de informe hace referencia a cómo se distribuye el peso de los objetos por la página, ya sean del mismo tamaño o de diferentes tamaños.
+            * Simétrico: se logra distribuyendo el peso uniformemente en ambas mitades de la página.
+            * Asimétrico: se logra mediante el contraste.
 
+            La proporción aurea puede servir como guía para genere un equilibrio. Cuando se aplica al diseño de informes, la proporción áurea ajusta una página para que tenga un objeto visual grande que llame la atención al principio y añade objetos visuales más pequeños para aportar contexto.
+        * Proximidad: se refiere a la cercanía de los objetos de informe. Cuando una página de informe consta de varios grupos de objetos relacionados, debe usar espacio para separarlos visualmente.
+        * Contraste: Se puede usar para combinar dos objetos opuestos. El uso de colores, fuentes, propiedades de fuente o líneas de contraste puede resaltar objetos importantes del diseño del informe. Use este principio para dirigir a los consumidores de informes hacia donde deben mirar o para determinar con qué objeto visual de datos deben interactuar en primer lugar.
+        * Repetición: la repetición crea asociación y uniformidad.
+
+2) Diseño de informes visualmente atractivos ([Rev](https://learn.microsoft.com/es-es/training/modules/power-bi-effective-reports/3-design-reports)): Los datos correctos y los objetos visuales aadecuados no garantizan que el informe sea visualmente atractivo. Un informe bien diseñado debe ayudar al consumidor a encontrar y comprender rápidamente las respuestas a sus preguntas.
+    * Espacio:
+        * Margenes: incluyen área del borde que rodea cada página. Se dee poner manualmente, deben ser iguales en ambos lados con posibles variaciones en la parte superior e inferior.
+        * Espaciado de objetos: añadir suficiente espacio alrededor de los objetos del informe o dentro de estos.
+    * Tamaño: Tamaño de la página o del objeto visual.
+        * Tamaño de página: Dimensiones predefinidas o personalizadas. Dimensiones personalizadas que sean superiores al tamaño de pantalla disponible implican la interacción con las barras de desplazamiento.
+        * Tamaño del objeto visual: cuanto más importante sea el objeto, mayor debería ser su tamaño. Objetos visuales similares deberán tener el mismo tamaño. Cuanto mñas grande sea el objeto visual más detalles se mostrarán, como ejes y etiquetas de datos. El modo de enfoque y el tamaño real debe comunicar igualmente de forma clara los datos.
+    * Alineación: Bordes alineados y espaciado entre los objetos visuales uniformes. Alineación de títulos y leyendas de objetos visuales debe ser uniforme. Los informes pueden contener distintas secciones implícitas o explícitas.
+        * Secciones implícitas: Alinea objetos visuales muy cercanos
+        * Secciones explícitas: Usa formas de colores y superpone objetos visuales alineados en esas formas, por ejemplo, uso de espacio y color de fondo.
+    * Color: usarlo con moderación y de manera significativa ya que un uso excesivo puede distraer. Límitese a unos colores básicos como base o colores corporativos. Los colores llamativos deben usarse para resaltar excepciones. Los colores deben tener un contraste suficiente.
+    * Uniformidad: La uniformidad debe estar presente en todo el diseño, en el espaciado, los márgenes, el tamaño o la alineación y, sobre todo, en las opciones de formato de objeto, como la fuente, tamaño y espesor, colores entre otros. Etiquetas de ejes y datos. La manera más rápida de aplicar uniformidad es aplicar un tema de informe o crear un tema de informe desde cero. Se puede expotar el tema del informe como un archivo JSON. Se puede usar [PowerBI tips](https://powerbi.tips/) para generar un tema.
+3) Usar objetos de informe ([Rev](https://learn.microsoft.com/es-es/training/modules/power-bi-effective-reports/4-report-objects)):
+    * Objetos visuales: visualizaciones de los datos del modelo semántico.Existe más de 30 objetpos vistuales
+    * Elementos: proporcionan interés visual, pero no usan datos del modelo semántico. Algunos de estos elementos son cuadros de texto, botones, formas e imágenes. Son de cuatro tipos:
+        * Cuadro de texto: añade texto enriquecido. Permite valores dinámicos incrustados
+        * Botones: permiten interacción
+        * Formas:decoración o para que se comporte como botón
+        * Imagen: se pueden comportar como botones
+4) Seleccionar objetos visuales de informe ([Rev](https://learn.microsoft.com/es-es/training/modules/power-bi-effective-reports/5-report-visuals)):
+    * Objetos visuales de categoría: Ej. barras
+    * Objetos visuales de series temporales: líneas o columnas.
+    Gráfico de columnas apiladas:
+        * Gráfico de áreas
+        * Gráfico de líneas y columnas apiladas
+        * Gráfico de cintas, que tiene la ventaja adicional de mostrar los cambios de clasificación a lo largo del tiempo
+    * Objetos visuales proporcionales:
+        * Gráfico de columnas 100 % apiladas
+        * Gráfico de embudo
+        * Gráfico de rectángulos
+        * Gráfico circular
+        * Gráfico de anillos
+    * Objetos visuales numéricos.
+    * Objetos visuales de cuadrícula: Tablas y matrices
+    * Objetos visuales de rendimiento: progreso hacia un objetivo específico a lo largo del tiempo. Requiere:
+        * Una unidad de medida sobre la que hacer el seguimiento.
+        * Un valor objetivo con esa medida
+        * Una serie temporal (diaria, mensual o anual)
+
+            Otros objetos visuales de Power BI de rendimiento:
+            * Medidor
+            * Tabla de formato condicional
+            * Matriz de formato condicional
+    * Objetos visuales geoespaciales
+5) Aplicar filtros y segmentaciones a los informes ([Rev](https://learn.microsoft.com/es-es/training/modules/power-bi-effective-reports/6-report-filters)): Hay muchas técnicas de filtrado de informes disponibles, puede ser complejo, pero la complejidad aporta control.
+
+    * Introducción al filtrado de informes: Puede tener lugar en 5 niiveles de un informe:
+        * Modelo semántico con seguridad de nivel de fila (RLS): para limitar el acceso a un sbconjunto de datos y pra determinar que distintos usuarios vean distintos datos.
+        * Estructura de Informe: el nivel superior es el informe, siguen las páginas y luego los objetos visuales y elementos de informe. En el panel Filtros, puede añadir un filtro a cualquiera de estos niveles
+        * Página
+        * Objeto visual
+        * Medida: calculos creados en DAX. Las funciones de inteligencia de tiempos puedeninvalidar los filtros que se aplican a al estructura del informe.
+    * Aplicación de filtros a la estructura del informe.
+    El panel Filtros tiene tres secciones:
+        * Filtros de todas las páginas
+        * Filtros de esta página
+        * Filtros de este objeto
+    * Aplicación de filtros con segmentación: La segmentación es un objeto visual principal que se utiliza para filtrar otros objetos visuales. Es uno de los objetos visuales más comunes que se agregan a una página de informe, ya que presenta una manera intuitiva de filtrar los datos para los consumidores del informe.
+6) Conocer las técnicas de filtrado y sus consideraciones ([Rev](https://learn.microsoft.com/es-es/training/modules/power-bi-effective-reports/7-filter-techniques)): Algunas técnicas de filtrado en informes se aplican en tiempo de diseño, mientras que otras son mejores en tiempo de consumo del informe (en la vista de lectura).
+    * Otras técnicas de filtrado:
+        * Interacciones visuales: cuando los consumidores del informe interactúan con los objetos visuales, los filtros se propagan a otros objetos visuales en la página del informe. De este modo, los objetos visuales se comportan como segmentaciones. Durante el filtrado cruzado, es posible introducir más filtros cruzados, incluso de otros objetos visuales, presionando la tecla `Ctrl`.
+        * Obtención de detalles: para que los consumidores del informe obtengan detalles de los objetos visuales. De forma predeterminada, la acción de obtención de detalles propaga todos los filtros que se aplican al objeto visual a la página de obtención de detalles.
+        * Información sobre herramientas del informe: esta aparecerá cuando los consumidores del informe muevan el cursor sobre los objetos visuales. De forma predeterminada, la información sobre herramientas del informe recibe todos los filtros que se aplican al objeto visual.
+        * Marcadores: Los marcadores capturan una vista concreta de un informe, incluidos los filtros, las segmentaciones, la selección de páginas y el estado de los objetos visuales.
+        * Opciones de informe
+        * Opciones de reducción de consultas
+    * Sugerencia para el filtrado: Estas son algunas sugerencias para el filtrado que le ayudarán a generar diseños eficaces para los informes:
+        * Use filtros o segmentaciones. No use ambas técnicas de filtro, ya que eso puede crear confusión.
+        * En el panel Filtros, valore la posibilidad de bloquear u ocultar filtros de nivel de objeto visual para evitar confundir a los consumidores del informe. (A menudo, el consumidor del informe no debe modificar ni ver los filtros de nivel de objeto visual).
+        * Cree un marcador para restablecer todas las segmentaciones a los valores predeterminados. Después, añada un botón a la página para invocar el marcador.
+        * Por ejemplo, el botón podría tener el título Restablecer segmentaciones.
+        * Cuando haya un requisito para crear muchas segmentaciones, valore la posibilidad de crear una página dedicada a mostrarlas todas. Por ejemplo, la página podría denominarse Segmentaciones. Sincronice las segmentaciones con otras páginas y, después, establezca las segmentaciones como ocultas en esas páginas. Esta técnica de diseño requiere que los consumidores de informes vayan siempre a la página Segmentaciones para modificar la configuración de las segmentaciones. Para ayudarles, puede añadir un botón de navegación de página, en la misma ubicación en todas las páginas, para que puedan volver fácilmente a Segmentaciones.
+        * Valore la posibilidad de usar otros objetos visuales en lugar de segmentaciones. Asegúrese de mostrar a los consumidores del informe cómo aplicar filtros cruzados usando esos objetos visuales.
+7) Caso práctico: Configuración de filtros de informe basados en comentarios ([Rev](https://learn.microsoft.com/es-es/training/modules/power-bi-effective-reports/8-report-filters-case-study))
